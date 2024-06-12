@@ -7,6 +7,7 @@ const Loader = () => (
       alt='loader'
       width={100}
       height={100}
+      priority
       className='object-contain'
     />
     <p className='text-sm font-bold text-primary-grey-300'>Loading...</p>
