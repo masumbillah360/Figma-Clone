@@ -35,5 +35,7 @@ export const {
         useCanUndo,
         useCanRedo,
         useMutation,
+        useCreateThread,
+        useThreads
     },
 } = createRoomContext<Presence, Storage, UserMeta, RoomEvent>(client);
