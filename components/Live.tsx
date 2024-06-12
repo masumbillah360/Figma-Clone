@@ -15,7 +15,11 @@ import ReactionSelector from './reaction/ReactionSelector';
 import FlyingReaction from './reaction/FlyingReaction';
 import useInterval from '@/hooks/useInterval';
 
-const Live = () => {
+interface Props {
+    canvasRef: React.MutableRefObject<HTMLCanvasElement | null>;
+}
+
+const Live = ({ canvasRef }: Props) => {
     const others = useOthers();
     const [{ cursor }, updateMyPresence] = useMyPresence() as any;
 
@@ -173,12 +177,14 @@ const Live = () => {
     }, []);
     return (
         <div
-            className="h-screen w-full flex justify-center items-center"
+            id='canvas'
+            className="h-[100vh] w-full  flex items-center justify-center text-center"
             onPointerMove={handlePointerMove}
             onPointerLeave={handlePointerLeave}
             onPointerDown={handlePointerDown}
             onPointerUp={handlePointerUp}>
-            <canvas />
+
+            <canvas className='h-full w-full' ref={canvasRef} />
 
             {reaction.map((react) => (
                 <FlyingReaction
