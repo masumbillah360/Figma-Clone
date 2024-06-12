@@ -178,7 +178,7 @@ const Live = () => {
             onPointerLeave={handlePointerLeave}
             onPointerDown={handlePointerDown}
             onPointerUp={handlePointerUp}>
-            <h1 className="text-5xl text-white">Live block figma clone</h1>
+            <canvas />
 
             {reaction.map((react) => (
                 <FlyingReaction
