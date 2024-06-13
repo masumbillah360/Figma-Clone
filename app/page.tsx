@@ -93,7 +93,6 @@ export default function Page() {
                 isDrawing.current = false
                 if (fabricRef.current) {
                     fabricRef.current.isDrawingMode = false
-
                 }
                 break;
 
