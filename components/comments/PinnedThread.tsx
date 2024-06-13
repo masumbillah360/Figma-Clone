@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ThreadData } from "@liveblocks/client";
 import { Thread } from "@liveblocks/react-comments";
 
@@ -14,6 +14,11 @@ type Props = {
 
 export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
   // Open pinned threads that have just been created
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, [])
+
   const startMinimized = useMemo(
     () => Number(new Date()) - Number(new Date(thread.createdAt)) > 100,
     [thread]
@@ -44,7 +49,6 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
           ) {
             return;
           }
-
           setMinimized(!minimized);
         }}
       >
@@ -76,6 +80,8 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
     ),
     [thread.comments.length, minimized]
   );
-
+  if (!mounted) {
+    return null;
+  }
   return <>{memoizedContent}</>;
 };
