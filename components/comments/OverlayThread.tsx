@@ -2,7 +2,7 @@
 
 import { useCallback, useRef } from "react";
 
-import { ThreadMetadata, useEditThreadMetadata, useUser } from "@/liveblocks.config";
+import { ThreadMetadata, useEditThreadMetadata } from "@/liveblocks.config";
 import { PinnedThread } from "./PinnedThread";
 
 import { ThreadData } from "@liveblocks/client";
@@ -26,8 +26,7 @@ const OverlayThread = ({ thread, maxZIndex }: OverlayThreadProps) => {
      *
      * useUser: https://liveblocks.io/docs/api-reference/liveblocks-react#useUser
      */
-    // const { isLoading } = useUser(thread.comments[0].userId);
-
+ 
     // // We're using a ref to get the thread element to position it
     const threadRef = useRef<HTMLDivElement>(null);
 
