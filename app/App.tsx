@@ -13,7 +13,7 @@ import { useMutation, useRedo, useStorage, useUndo } from '@/liveblocks.config';
 import { defaultNavElement } from '@/constants';
 import { handleDelete, handleKeyDown } from '@/lib/key-events';
 import { handleImageUpload } from '@/lib/shapes';
-import { NewLeftSidebar } from '@/components';
+import NewLeftSidebar  from '@/components/NewLeftSidebar';
 
 export default function Page() {
     const undo = useUndo();
