@@ -12,8 +12,8 @@ import { ActiveElement, Attributes } from '@/types/type';
 import { useMutation, useRedo, useStorage, useUndo } from '@/liveblocks.config';
 import { defaultNavElement } from '@/constants';
 import { handleDelete, handleKeyDown } from '@/lib/key-events';
-import LeftSidebar from '../components/LeftSidebar';
 import { handleImageUpload } from '@/lib/shapes';
+import { NewLeftSidebar } from '@/components';
 
 export default function Page() {
     const undo = useUndo();
@@ -202,7 +202,7 @@ export default function Page() {
                 })
             }} />
             <section className="flex h-full flex-row">
-                <LeftSidebar allShapes={Array.from(canvasObjects)} />
+                <NewLeftSidebar allShapes={Array.from(canvasObjects)} />
                 <Live canvasRef={canvasRef} redo={redo} undo={undo} />
                 <RightSideBar
                     elementAttributes={elementAttributes}
