@@ -12,7 +12,7 @@ import { ActiveElement, Attributes } from '@/types/type';
 import { useMutation, useRedo, useStorage, useUndo } from '@/liveblocks.config';
 import { defaultNavElement } from '@/constants';
 import { handleDelete, handleKeyDown } from '@/lib/key-events';
-import LeftSidebar from '@/components/LeftSidebar';
+import LeftSidebar from '../components/LeftSidebar';
 import { handleImageUpload } from '@/lib/shapes';
 
 export default function Page() {
